@@ -2,6 +2,12 @@
 #include <stdarg.h>
 #include <stddef.h>
 
+/**
+ * print_string- Function to print strings
+ * @str: string to print
+ * Return: count
+ */
+
 int _printf(const char * const format, ...)
 {
 	va_list args;
