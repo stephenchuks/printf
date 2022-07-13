@@ -1,4 +1,5 @@
 #include "main.h"
+<<<<<<< HEAD
 
 void print_buffer(char buffer[], int *buff_ind);
 
@@ -51,6 +52,10 @@ int _printf(const char *format, ...)
 
 	return (printed_chars);
 }
+=======
+#include <stdarg.h>
+#include <stddef.h>
+>>>>>>> e1917995270a331a3aef5fb59a301b8c65658f98
 
 /**
  * print_buffer - Prints the contents of the buffer if it exist
@@ -59,8 +64,70 @@ int _printf(const char *format, ...)
  */
 void print_buffer(char buffer[], int *buff_ind)
 {
+<<<<<<< HEAD
 	if (*buff_ind > 0)
 		write(1, &buffer[0], *buff_ind);
 
 	*buff_ind = 0;
 }
+=======
+	va_list args;
+	int i = 0, j=0, k=0;
+	int count = 0;
+	char *str = NULL;
+
+	va_start(args, format);
+
+	while(format[i] != '\0')
+	{
+		if(format[i] != '%')
+		{	
+			_putchar(format[i]);
+			count++;
+		}			
+		else
+		{
+			/* format[i]*/
+			if(format[i+1] == 'c')
+			{
+			_putchar(va_arg(args, int));
+			count++;
+			i++;
+			}
+		else if (format[i+1] == 's')
+		{	
+			i++;
+			str = va_arg(args, char *);
+			j = 0;
+			while (str[j])
+			{
+			_putchar(str[j]);
+			count++;
+			j++;
+			}
+		}
+		else if (format[i+1] == '%')
+		{	
+			i++;
+			/*print_c('%)*/
+			_putchar('%');
+			count++;
+		}
+		
+		else if (format[i+1]=='d){
+			i++;
+			k = va_arg(args, int);
+			/*print_interger(num)*/
+
+		}
+		}
+		//_putchar(format[i]);
+		i++;
+	}
+
+	va_end(args);
+
+	return (count);
+}
+
+>>>>>>> e1917995270a331a3aef5fb59a301b8c65658f98

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdarg.h>
@@ -115,3 +116,11 @@ long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
 
 #endif /* MAIN_H */
+=======
+#ifndef VARIADIC_FUNCTIONS_H
+#define VARIADIC_FUNCTIONS_H
+#include <stdarg.h>
+int _printf(const char *format, ...);
+int _putchar(char c);
+#endif
+>>>>>>> e1917995270a331a3aef5fb59a301b8c65658f98
