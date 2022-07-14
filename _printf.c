@@ -11,9 +11,9 @@
 int _printf(const char * const format, ...)
 {
 	va_list args;
-	int i = 0, j=0, k=0;
+	int i = 0;
 	int count = 0;
-	char *str = NULL;
+	/*char *str = NULL;*/
 	int (*func)(va_list);
 
 	va_start(args, format);
@@ -36,7 +36,7 @@ int _printf(const char * const format, ...)
 			}
 			i++;
 			/*
-			// format[i]
+		
 			if(format[i+1] == 'c')
 			{
 			print_c(args);
@@ -59,11 +59,11 @@ int _printf(const char * const format, ...)
 			i++;
 			
 			print_i(args);
-			//print_interger(num)
+			
 
 		}*/
 		}
-		//_putchar(format[i]);
+		
 		i++;
 	}
 
